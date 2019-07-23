@@ -46,9 +46,7 @@ class SignIn extends React.Component {
             required
           />
           <div className='buttons'>
-            <Button type='submit' onClick={this.handleSubmit}>
-              Sign In
-            </Button>
+            <Button type='submit'>Sign In</Button>
             <Button onClick={signInWithGoogle} isGoogleSignIn>
               {' '}
               Sign In With Google{' '}
