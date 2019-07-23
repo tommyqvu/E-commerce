@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+
 import './collection-item.styles.scss';
 import Button from '../button/button.component';
 import { addItemToCart } from '../../redux/cart/cart.action';
@@ -25,10 +27,10 @@ const CollectionItem = ({ item, addItemToCart }) => {
   );
 };
 
-const mapStateToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   addItemToCart: item => dispatch(addItemToCart(item)),
 });
 export default connect(
   null,
-  mapStateToProps,
+  mapDispatchToProps,
 )(CollectionItem);
