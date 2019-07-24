@@ -1,3 +1,6 @@
 export const setCurUser = "SET_CURRENT_USER"
 export const toggleCart = "TOGGLE_CART"
 export const addItem = "ADD_ITEM"
+export const removeItem = "REMOVE_ITEM"
+export const decrease = "DECREASE"
+export const increase = "INCREASE"
