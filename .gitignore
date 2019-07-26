@@ -22,5 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-firebase.utils.js
-firebase.utils.js~58d431fc5eff6ec5ab7c224cd95167ba49775e04
+
+.env
+
