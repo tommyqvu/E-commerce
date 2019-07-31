@@ -1,14 +1,24 @@
 import { updatedObject } from '../util';
-import {setCurUser} from "../actionTypes"
+import {
+  authSuccess,
+  authFailed,
+  signOutFailed,
+  signOutSuccess,
+ 
+} from '../actionTypes';
 const INITIAL_STATE = {
   currentUser: null,
+  error: null,
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case setCurUser:
-      return updatedObject(state, { currentUser: action.payload });
-
+    case authSuccess:
+      return updatedObject(state, { currentUser: action.payload, error: null });
+    case authFailed:
+      return updatedObject(state, { error: action.payload });
+    case signOutSuccess:
+      return updatedObject(state, { currentUser: null, error: null });
     default:
       return state;
   }

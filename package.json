@@ -13,8 +13,12 @@
     "react-scripts": "2.1.8",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
-    "reselect": "^4.0.0"
+    "redux-saga": "^1.0.5",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "save-dev": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

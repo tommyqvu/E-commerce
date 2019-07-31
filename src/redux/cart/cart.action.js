@@ -1,19 +1,29 @@
-import {toggleCart, addItem, removeItem,  decrease} from "../actionTypes"
+import {
+  toggleCart,
+  addItem,
+  removeItem,
+  decrease,
+  clearCart,
+} from '../actionTypes';
 
-export const toggleCartHidden = ()=>({
-  type: toggleCart
-})
+export const toggleCartHidden = () => ({
+  type: toggleCart,
+});
 
-export const addItemToCart = (item)=>({
+export const addItemToCart = item => ({
   type: addItem,
-  payload: item
-})
-export const removeItemFromCart = (id)=>({
+  payload: item,
+});
+export const removeItemFromCart = id => ({
   type: removeItem,
-  payload: id
-})
+  payload: id,
+});
 
-export const decreaseQuantity = id=>({
+export const decreaseQuantity = id => ({
   type: decrease,
-  payload: id
-})
+  payload: id,
+});
+
+export const clearCartAction = () => ({
+  type: clearCart,
+});
