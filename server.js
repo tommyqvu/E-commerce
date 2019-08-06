@@ -28,7 +28,6 @@ app.listen(port, error => {
 });
 
 app.post('/payment', (req, res) => {
-  console.log('payment sever');
   const body = {
     source: req.body.token.id,
     amount: req.body.amount,

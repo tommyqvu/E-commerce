@@ -4,7 +4,6 @@ import StripeCheckout from 'react-stripe-checkout';
 
 const Stripe = ({ price }) => {
   const onToken = token => {
-    console.log('processing');
     axios({
       url: 'payment',
       method: 'post',
