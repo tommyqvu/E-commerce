@@ -2,7 +2,6 @@ import {
   startCollectionFetch,
   successCollectionFetch,
   failedCollectionFetch,
-  clearCart,
 } from '../actionTypes';
 
 import {

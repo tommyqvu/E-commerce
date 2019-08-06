@@ -2,7 +2,6 @@ import { updatedObject } from '../util';
 import {
   authSuccess,
   authFailed,
-  signOutFailed,
   signOutSuccess,
  
 } from '../actionTypes';
