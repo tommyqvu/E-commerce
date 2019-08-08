@@ -1,10 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { signOutStartAction } from '../../redux/user/user.actions';
 
-import './header.styles.scss';
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionsContainer,
+  OptionLink,
+  OptionDiv,
+} from './header.styles';
 import { ReactComponent as Logo } from '../../assets/crown.svg';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selector';
@@ -12,30 +17,30 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
-  <div className='header'>
-    <Link to='/' className='logo-container'>
+  <HeaderContainer>
+    <LogoContainer to='/'>
       <Logo className='logo' />
-    </Link>
-    <div className='options'>
-      <Link to='/shop' className='option'>
+    </LogoContainer>
+    <OptionsContainer>
+      <OptionLink to='/shop' className='option'>
         SHOP
-      </Link>
-      <Link to='/shop' className='option'>
+      </OptionLink>
+      <OptionLink to='/shop' className='option'>
         CONTACT
-      </Link>
+      </OptionLink>
       {currentUser ? (
-        <div className='option' onClick={() => signOutStart()}>
+        <OptionDiv className='option' onClick={() => signOutStart()}>
           SIGN OUT
-        </div>
+        </OptionDiv>
       ) : (
-        <Link className='option' to='/signin'>
+        <OptionLink className='option' to='/signin'>
           SIGN IN
-        </Link>
+        </OptionLink>
       )}
       <CartIcon />
-    </div>
+    </OptionsContainer>
     {hidden ? null : <CartDropdown />}
-  </div>
+  </HeaderContainer>
 );
 
 const mapStateToProps = createStructuredSelector({

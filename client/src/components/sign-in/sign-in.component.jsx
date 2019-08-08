@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
+
 import { connect } from 'react-redux';
-import './sign-in.styles.scss';
+
+import {
+  ButtonsBarContainer,
+  SignInContainer,
+  SignInTitle,
+} from './sign-in.styles';
+
 import FormInput from '../form-input/form-input.component';
+
 import Button from '../button/button.component';
 
 import {
@@ -22,8 +30,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     setCredentials({ ...credentials, [name]: value });
   };
   return (
-    <div className='sign-in'>
-      <h2>I already have an account</h2>
+    <SignInContainer>
+      <SignInTitle>I already have an account</SignInTitle>
       <span>Sign in with your email and password</span>
       <form action='' onSubmit={handleSubmit}>
         <FormInput
@@ -42,13 +50,15 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
           label='Password'
           required
         />
-        <Button type='submit'>Sign In</Button>
+        <ButtonsBarContainer>
+          <Button type='submit'>Sign In</Button>
+          <Button onClick={googleSignInStart} isGoogleSignIn>
+            {' '}
+            Sign In With Google{' '}
+          </Button>
+        </ButtonsBarContainer>
       </form>
-      <Button onClick={googleSignInStart} isGoogleSignIn>
-        {' '}
-        Sign In With Google{' '}
-      </Button>
-    </div>
+    </SignInContainer>
   );
 };
 
